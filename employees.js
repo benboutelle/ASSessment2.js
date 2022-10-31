@@ -21,14 +21,14 @@
 
 //CODE HERE
 class Employee{
-    constructor(name,shift){
+    constructor(name,shifts){
         this.name = name
-        this.shift = shift
+        this.shifts = shifts
     }
-    
+     getSchedule = () => {
+console.log(`${this.name} works on ${this.shifts}`)
 }
-const getSchedule= new Employee(`benny`, `morning`)
-console.log(`${getSchedule.name} works on ${getSchedule.shift}`)
+}
 
 /*
     Create a new instance of your class.
@@ -41,15 +41,15 @@ console.log(`${getSchedule.name} works on ${getSchedule.shift}`)
 */
 
 //CODE HERE
-const empOne = new Employee(`Jess`, `weekday mornings, weekday afternoons`)
-
+ const empOne = new Employee(`Jess`, `weekday mornings, weekday afternoons`)
+console.log(empOne)
 /*
     Call the `getSchedule` method on the
     `empOne` object.
 */
 
 //CODE HERE
-console.log(`${empOne.name} works on ${empOne.shift}`)
+empOne.getSchedule()
 
 /*
     Make a copy of the empOne object
@@ -65,7 +65,10 @@ console.log(`${empOne.name} works on ${empOne.shift}`)
 
 //CODE HERE
 
+const empTwo = {...empOne}
 
+empTwo.name = `Nick`
+console.log(empTwo)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -91,9 +94,24 @@ console.log(`${empOne.name} works on ${empOne.shift}`)
 */
 
 //CODE HERE
+// SPELLED CONSTRUCTOR WRONG AGAINNNNNNNN WOW SPELLING IS SO IMPORTANT WISH I TRYED HARDED IN SPELLING BEE'S
 
+class Manager extends Employee{
+    constructor(name, shifts,employees){
+        super(name,shifts)
+            this.employees = employees
+        
+}
+getEmployees(){
+    console.log(`${this.name}manages ${this.employees}`)
 
-
+}
+addEmployee(emp){
+    this.employees.push(emp)
+}
+}
+// I HAD MISSPELT A BUNCH OF EMPLOYEES ( FORGOT TO ADD THE LETTER S ) JUST MINOR TWEAKS TO GET THE CODE TO RUN PROPERLY I WILL FOR SURE PAY MORE ATTENTION TO HOW IM SPELING THINGS CUZ THIS WAS SO ANNOYING 
+//JUST A MISSING LETTER AND THE WHOLE CODE IS THROWN OFFFFFFF WTF 
 /*
     Create a new instance of your class.
     Save it to a variable called `manager`.
@@ -106,15 +124,15 @@ console.log(`${empOne.name} works on ${empOne.shift}`)
 */
 
 //CODE HERE
-
-
+  const manager = new Manager(`Winston`, `weekday mornings and weeekday afternoons`, [`Cece`,`Shmidt`])
+  console.log(manager)
 /*
     Call the `getEmployees` method on the
     `manager` object.  
 */
 
 //CODE HERE
-
+    manager.getEmployees()
 /*
     Call the `addEmployee` method on the 
     `manager` object passing in the string 
@@ -122,7 +140,7 @@ console.log(`${empOne.name} works on ${empOne.shift}`)
 */
 
 //CODE HERE 
-
+manager.addEmployee(`Coach`)
 /*
     Call the `getEmployees` method on the
     `manager` object again to confirm 
@@ -130,3 +148,4 @@ console.log(`${empOne.name} works on ${empOne.shift}`)
 */
 
 //CODE HERE
+manager.getEmployees()

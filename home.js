@@ -23,10 +23,11 @@
 
 //CODE HERE
 
-const greetUser = ( benny ) => {
-    console.log(`welcome back,${benny}`)
+const greetUser = ( username ) => {
+    return `welcome back ${username}`
 }
 
+console.log(greetUser(`benny`))
 
 
 //////////////////PROBLEM 2////////////////////
@@ -52,9 +53,18 @@ const greetUser = ( benny ) => {
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE  
-let canWeDeliver.forEach= (function (element, i ) console.log(`${element}is in the delivery zone`))
+const canWeDeliver = (zipCode) => { 
+    for(let i = zipCode; i < deliveryAreaZipCodes.length; i++){
+        if(deliveryAreaZipCodes[i]=== zipCode){
+            return"you are in our delivery zone" 
+        }
+           
+        }
+        return "sorrry we cant deliver to that address"
+    }
 
-
+console.log(canWeDeliver(84606))
+console.log(canWeDeliver(85205))
 
 /* 
     Problem 2 Continued
@@ -74,6 +84,10 @@ let canWeDeliver.forEach= (function (element, i ) console.log(`${element}is in t
 */
 
 // CODE HERE
+const canWeDeliverTwo = (zipCode) => deliveryAreaZipCodes.includes(zipCode)
+console.log(canWeDeliverTwo(84606))
+console.log(canWeDeliverTwo(85202))
+
 
 
 //////////////////PROBLEM 3////////////////////
@@ -110,6 +124,11 @@ const deals = [
 */
 
 //CODE HERE
+//console.log(deals[0].title)
+
+let newdeal = deals[0].title.replace(`15`, `10`)
+
+//console.log(deals[0].title)
 
 
 
@@ -127,3 +146,6 @@ const deals = [
 */
 
 //CODE HERE
+deals[1].desc = deals[1].desc.trim().replace( `march`, `april`)
+
+console.log(deals[1])
